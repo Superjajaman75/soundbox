@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Soundboard FIPA</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Soundboard FIPA</a>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+      <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Why are you running COMPLETE</h5>
+          </div>
+          <div class="card-footer">
+            <button id="Why_Are_You_Running_LONG" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Why are you running SHORT</h5>
+          </div>
+          <div class="card-footer">
+            <button id="Why_Are_You_Running_SHORT" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">AHHHHH</h5>
+          </div>
+          <div class="card-footer">
+            <button id="AHHHHH" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Oui Mais C'est pas toi qui décide</h5>
+          </div>
+          <div class="card-footer">
+            <button id="PasToiDecide" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">BRUH</h5>
+          </div>
+          <div class="card-footer">
+            <button id="bruh" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Really Nigga</h5>
+          </div>
+          <div class="card-footer">
+            <button id="reallyNigga" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="col-lg-2 m-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">RUN</h5>
+          </div>
+          <div class="card-footer">
+            <button id="run" class="btn btn-primary">PLAY</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+	jQuery.noConflict();
+	(function( $ ) {
+		var myAudio;
+		
+		function playAudio(but, song) {
+			if (but.innerHTML == "PLAY") {
+				//if (myAudio) {myAudio.pause();}
+				myAudio = new Audio(song);
+				myAudio.play();
+				myAudio.onended = function() { but.innerHTML ='PLAY';};
+				but.innerHTML ='STOP';
+			} else if (but.innerHTML == "STOP") {
+				myAudio.pause();
+				myAudio.currentTime = 0;
+				but.innerHTML ='PLAY';
+			}
+		}
+		
+		$('#Why_Are_You_Running_SHORT').click(function() {
+			playAudio(this, 'audio/Why_Are_You_Running_SHORT.mp3');
+		});
+		$('#Why_Are_You_Running_LONG').click(function() {
+			playAudio(this, 'audio/Why_Are_You_Running_LONG.mp3');
+		});
+		$('#AHHHHH').click(function() {
+			playAudio(this, 'audio/AHHHHH.mp3');
+		});
+		$('#PasToiDecide').click(function() {
+			playAudio(this, 'audio/PasToiDecide.mp3');
+		});
+		$('#bruh').click(function() {
+			playAudio(this, 'audio/bruh.mp3');
+		});
+		$('#reallyNigga').click(function() {
+			playAudio(this, 'audio/reallyNigga.mp3');
+		});
+		$('#run').click(function() {
+			playAudio(this, 'audio/run.mp3');
+		});
+	})(jQuery);
+	
+  </script>
+
+</body>
+
+</html>
